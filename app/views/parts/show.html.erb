@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Part number:</b>
+  <%= @part.part_number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @part.name %>
+</p>
+
+<p>
+  <b>Prodict:</b>
+  <%= @part.prodict_id %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @part.weight %>
+</p>
+
+<p>
+  <b>Dimensions:</b>
+  <%= @part.dimensions %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @part.supplier_id %>
+</p>
+
+<p>
+  <b>Delivery date:</b>
+  <%= @part.delivery_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

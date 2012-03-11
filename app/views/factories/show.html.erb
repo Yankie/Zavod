@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Factory:</b>
+  <%= @factory.factory_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @factory.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @factory.address %>
+</p>
+
+<p>
+  <b>Ceo name:</b>
+  <%= @factory.ceo_name %>
+</p>
+
+<p>
+  <b>Departments:</b>
+  <%= @factory.departments.count %>
+  <% unless @factory.departments.empty? %>
+    <table summary="Factory departments">
+      <%= render @departments %>
+    </table>
+    <%= will_paginate @departments %>
+  <% end %>
+
+</p>
+
+<%= link_to 'Edit', edit_factory_path(@factory) %> |
+<%= link_to 'Back', factories_path %>

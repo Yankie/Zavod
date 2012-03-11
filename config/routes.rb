@@ -1,4 +1,16 @@
 Zavod::Application.routes.draw do
+  resources :suppliers
+
+  resources :parts
+
+  resources :products
+
+  resources :departments
+
+  resources :factories do
+	  resources :departments
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

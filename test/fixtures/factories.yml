@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: factories
+#
+#  id         :integer(4)      not null, primary key
+#  factory_id :integer(4)
+#  name       :string(255)
+#  address    :string(255)
+#  ceo_name   :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  factory_id: 1
+  name: MyString
+  address: MyString
+  ceo_name: MyString
+
+two:
+  factory_id: 1
+  name: MyString
+  address: MyString
+  ceo_name: MyString

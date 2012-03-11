@@ -1,0 +1,22 @@
+  <tr>
+    <th>Department number</th>
+    <th>Factory</th>
+    <th>Chief name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @departments.each do |department| %>
+  <tr>
+    <td><%= department.department_number %></td>
+    <td><%= department.factory_id %></td>
+    <td><%= department.chief_name %></td>
+    <td><%= link_to 'Show', department %></td>
+    <td><%= link_to 'Edit', edit_department_path(department) %></td>
+    <td><%= link_to 'Destroy', department, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+<tr colspan="6">
+<%= link_to 'New Department', new_department_path %>
+</tr>
