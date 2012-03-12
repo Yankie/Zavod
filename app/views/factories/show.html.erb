@@ -1,34 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Factory:</b>
-  <%= @factory.factory_id %>
+<b>Factory #:</b>
+<%= @factory.factory_num %>
 </p>
 
 <p>
-  <b>Name:</b>
-  <%= @factory.name %>
+<b>Name:</b>
+<%= @factory.name %>
 </p>
 
 <p>
-  <b>Address:</b>
-  <%= @factory.address %>
+<b>Address:</b>
+<%= @factory.address %>
 </p>
 
 <p>
-  <b>CEO Name:</b>
-  <%= @factory.ceo_name %>
+<b>CEO Name:</b>
+<%= @factory.ceo_name %>
 </p>
 
 <p>
-  <b>Departments:</b>
-  <%= @factory.departments.count %>
-  <% unless @factory.departments.empty? %>
-    <table summary="Factory departments">
-      <%= render @departments %>
-    </table>
-    <%= will_paginate @departments %>
-  <% end %>
+<b>Departments:</b>
+<%= @factory.departments.count %>
+<% unless @factory.departments.empty? %>
+	<table summary="Factory departments">
+		<tr>
+			<th>Department number</th>
+			<th>Factory</th>
+			<th>Chief name</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<%= render @departments %>
+	</table>
+	<%= will_paginate @departments %>
+<% end%>
+<%= link_to 'New Department', new_factory_department_path(@factory.id) %>
 </p>
 
 <%= link_to 'Edit', edit_factory_path(@factory) %> |

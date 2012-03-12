@@ -16,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
+<%= link_to 'Edit', edit_factory_department_path(@department.factory_id, @department) %> |
+<%= link_to 'Back', factory_path(@department.factory_id)  %>

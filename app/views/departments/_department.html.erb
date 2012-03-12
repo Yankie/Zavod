@@ -1,0 +1,8 @@
+<tr>
+	<td><%= department.department_number %></td>
+	<td><%= department.factory_id %></td>
+	<td><%= department.chief_name %></td>
+	<td><%= link_to 'Show', factory_department_path(department.factory_id, department)%></td>
+	<td><%= link_to 'Edit', edit_factory_department_path(department.factory_id, department) %></td>
+	<td><%= link_to 'Destroy', factory_department_path(department.factory_id, department), confirm: 'Are you sure?', method: :delete %></td>
+</tr>

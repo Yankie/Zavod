@@ -13,4 +13,10 @@
 
 class Factory < ActiveRecord::Base
 	has_many :departments, :dependent => :destroy
+	attr_accessible :name, :address, :ceo_name, :factory_num
+	
+	validates :name, :presence => true
+	validates :address, :presence => true
+	validates :ceo_name, :presence => true
+	validates :factory_num, :presence => true
 end

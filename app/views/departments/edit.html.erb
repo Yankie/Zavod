@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @department %> |
-<%= link_to 'Back', departments_path %>
+<%= link_to 'Show', factory_department_path(@department.factory_id, @department) %> |
+<%= link_to 'Back', factory_departments_path(@department.factory_id) %>
