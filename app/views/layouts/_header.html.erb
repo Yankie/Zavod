@@ -1,6 +1,6 @@
 <header>
 <!-- 			<%= image_tag("logo.png", :alt => "Sample App", :class => "round") %> -->
-	<div class="round" style="background: cadetblue; color: white; width: 100px;padding: 20px; float: none; text-align: center;">
+	<div class="round logo">
 		<a href="<%= root_path%>">
 			<h1 style="margin: 0; color: #FFF">Zavod</h1>
 			<h2 style="margin: 0; color: #FFF">Test App</h2>
@@ -8,8 +8,21 @@
 	</div>
 	<nav class="round">
 		<ul>
-			<li><%= link_to "Edit", '#' %></li>
-			<li><%= link_to "Reports", '#' %></li>
+			<li>
+				<%= link_to "Edit", '#' %>
+				<ul>
+					<li><%= link_to "Factories", factories_path %></li>
+					<li><%= link_to "Products", products_path %></li>
+					<li><%= link_to "Suppliers", suppliers_path %></li>
+				</ul>
+			</li>
+			<li>
+				<%= link_to "Reports", '#' %>
+				<ul>
+					<li><%= link_to "Parts", reports_parts_path %></li>
+					<li><%= link_to "Deliveries", reports_deliveries_path %></li>
+				</ul>
+			</li>
 		</ul>
 	</nav>
 </header>

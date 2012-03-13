@@ -15,11 +15,21 @@ body {
 
 header {
 	padding-top: 20px;
+	height: 112px;
 }
 
 header div {
 	padding: 1em;
 	background: #fff;
+}
+header div.logo {
+	background: cadetblue;
+	color: white;
+	width: 100px;
+	padding: 20px;
+	float: left;
+	text-align: center;
+	position: absolute;
 }
 header a:hover {
 	text-decoration: none;
@@ -56,9 +66,8 @@ a:visited {
 
 nav {
 	float: right;
-}
-
-nav {
+	position: relative;
+	right: 0px;
 	background-color: white;
 	padding: 0 0.7em;
 	white-space: nowrap;
@@ -78,6 +87,10 @@ nav ul li {
 nav ul li a {
 	padding: 0 5px;
 	font-weight: bold;
+}
+nav ul li ul li a {
+	padding: 0 5px;
+	font-weight: normal;
 }
 
 nav ul li a:visited {
