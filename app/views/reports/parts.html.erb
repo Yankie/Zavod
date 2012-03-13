@@ -1,2 +1,49 @@
-<h1>Reports#parts</h1>
-<p>Find me in app/views/reports/parts.html.erb</p>
+<h1>Report: All parts</h1>
+
+<h2>Parts used in products</h2>
+<table>
+  <tr>
+    <th>Part number</th>
+    <th>Name</th>
+    <th>Product</th>
+    <th>Weight</th>
+    <th>Dimensions</th>
+    <th>Supplier</th>
+    <th>Delivery date</th>
+  </tr>
+
+<% @parts.each do |part| %>
+  <tr>
+    <td><%= part.part_number %></td>
+    <td><%= part.name %></td>
+    <td><%= part.product.name %></td>
+    <td><%= part.weight %></td>
+    <td><%= part.dimensions %></td>
+    <td><%= part.supplier_id %></td>
+    <td><%= part.delivery_date %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Parts not assigned to any products</h2>
+<table>
+  <tr>
+    <th>Part number</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Dimensions</th>
+    <th>Supplier</th>
+    <th>Delivery date</th>
+  </tr>
+
+<% @parts_free.each do |part| %>
+  <tr>
+    <td><%= part.part_number %></td>
+    <td><%= part.name %></td>
+    <td><%= part.weight %></td>
+    <td><%= part.dimensions %></td>
+    <td><%= part.supplier_id %></td>
+    <td><%= part.delivery_date %></td>
+  </tr>
+<% end %>
+</table>

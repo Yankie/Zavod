@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Prodict:</b>
-  <%= @part.prodict_id %>
+  <b>Product:</b>
+  <%= @part.product_id %>
 </p>
 
 <p>
@@ -36,5 +36,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %>
+<%= link_to 'Edit', edit_supplier_part_path(@part.supplier_id, @part.id) %> |
+<%= link_to 'Back', supplier_parts_path(@part.supplier_id) %>

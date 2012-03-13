@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Factory:</b>
+  <%= @factory.name %>
+</p>
+
+<p>
   <b>Department:</b>
-  <%= @product.department_id %>
+  <%= @department.department_number %>
 </p>
 
 <p>
@@ -15,6 +20,29 @@
   <%= @product.weight %>
 </p>
 
+<p>
+<b>Parts:</b>
+<%= @product.parts.count %>
+<% unless @product.parts.empty? %>
+	<table summary="Product parts">
+		<tr>
+			<th>Part number</th>
+			<th>Name</th>
+			<th>Product</th>
+			<th>Weight</th>
+			<th>Dimensions</th>
+			<th>Supplier</th>
+			<th>Delivery date</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<%= render @parts %>
+	</table>
+	<%= will_paginate @parts %>
+<% end%>
+<%= link_to 'Add Part', add_part_product_path(@product.id) %>
+</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

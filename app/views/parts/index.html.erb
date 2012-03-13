@@ -4,7 +4,7 @@
   <tr>
     <th>Part number</th>
     <th>Name</th>
-    <th>Prodict</th>
+    <th>Product</th>
     <th>Weight</th>
     <th>Dimensions</th>
     <th>Supplier</th>
@@ -18,18 +18,18 @@
   <tr>
     <td><%= part.part_number %></td>
     <td><%= part.name %></td>
-    <td><%= part.prodict_id %></td>
+    <td><%= part.product %></td>
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
     <td><%= part.supplier_id %></td>
     <td><%= part.delivery_date %></td>
-    <td><%= link_to 'Show', part %></td>
-    <td><%= link_to 'Edit', edit_part_path(part) %></td>
-    <td><%= link_to 'Destroy', part, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', supplier_part_path(part.supplier_id, part.id) %></td>
+    <td><%= link_to 'Edit', edit_supplier_part_path(part.supplier_id, part.id) %></td>
+    <td><%= link_to 'Destroy', supplier_part_path(part.supplier_id, part.id), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Part', new_part_path %>
+<%= link_to 'New Part', new_supplier_part_path(@supplier.id) %>

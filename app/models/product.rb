@@ -13,4 +13,6 @@
 class Product < ActiveRecord::Base
 	has_many :parts
 	belongs_to :department
+
+	validates :name, :presence => true
 end

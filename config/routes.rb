@@ -12,10 +12,17 @@ Zavod::Application.routes.draw do
 
 	resources :suppliers do
 		resources :parts
+# 		member do
+# 			get :add_part, :remove_part
+# 		end
 	end
 
 	resources :products do
 		resources :parts
+		member do
+			get :add_part, :remove_part
+			put :assign_part
+		end
 	end
 
 	resources :factories do

@@ -1,4 +1,4 @@
-<%= form_for(@part) do |f| %>
+<%= form_for([@supplier, @part]) do |f| %>
   <% if @part.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
@@ -19,10 +19,10 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :prodict_id %><br />
-    <%= f.number_field :prodict_id %>
-  </div>
+<!--  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.number_field :product_id %>
+  </div>-->
   <div class="field">
     <%= f.label :weight %><br />
     <%= f.text_field :weight %>
@@ -31,10 +31,11 @@
     <%= f.label :dimensions %><br />
     <%= f.text_field :dimensions %>
   </div>
-  <div class="field">
+<!--  <div class="field">
     <%= f.label :supplier_id %><br />
     <%= f.number_field :supplier_id %>
-  </div>
+  </div>-->
+  <%= f.hidden_field :supplier_id, :value => @supplier.id %>
   <div class="field">
     <%= f.label :delivery_date %><br />
     <%= f.date_select :delivery_date %>

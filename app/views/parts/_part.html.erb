@@ -1,0 +1,12 @@
+<tr>
+	<td><%= part.part_number %></td>
+	<td><%= part.name %></td>
+	<td><%= part.product_id %></td>
+	<td><%= part.weight %></td>
+	<td><%= part.dimensions %></td>
+	<td><%= part.supplier_id %></td>
+	<td><%= part.delivery_date %></td>
+	<td><%= link_to 'Show', supplier_part_path(part.supplier_id) %></td>
+	<td><%= link_to 'Edit', edit_supplier_part_path(part.supplier_id,part) %></td>
+	<td><%= link_to 'Destroy', supplier_part_path(part.supplier_id), confirm: 'Are you sure?', method: :delete %></td>
+</tr>

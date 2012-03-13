@@ -5,7 +5,7 @@
 #  id            :integer(4)      not null, primary key
 #  part_number   :integer(4)
 #  name          :string(255)
-#  prodict_id    :integer(4)
+#  product_id    :integer(4)
 #  weight        :integer(10)
 #  dimensions    :string(255)
 #  supplier_id   :integer(4)
@@ -17,4 +17,6 @@
 class Part < ActiveRecord::Base
 	belongs_to :product
 	belongs_to :supplier
+
+	validates :name, :presence => true
 end

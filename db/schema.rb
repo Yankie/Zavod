@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312085548) do
+ActiveRecord::Schema.define(:version => 20120313083808) do
 
   create_table "departments", :force => true do |t|
     t.integer  "department_number"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120312085548) do
   create_table "parts", :force => true do |t|
     t.integer  "part_number"
     t.string   "name"
-    t.integer  "prodict_id"
+    t.integer  "product_id"
     t.decimal  "weight",        :precision => 10, :scale => 0
     t.string   "dimensions"
     t.integer  "supplier_id"

@@ -25,6 +25,29 @@
   <%= @supplier.ceo_name %>
 </p>
 
+<b>Parts:</b>
+<%= @supplier.parts.count %>
+<% unless @supplier.parts.empty? %>
+	<table summary="Supplier parts">
+		<tr>
+			<th>Part number</th>
+			<th>Name</th>
+			<th>Product</th>
+			<th>Weight</th>
+			<th>Dimensions</th>
+			<th>Supplier</th>
+			<th>Delivery date</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<%= render @parts %>
+	</table>
+	<%= will_paginate @parts %>
+<% end%>
+<%= link_to 'Add Part', new_supplier_part_path(@supplier.id) %>
+</p>
+
 
 <%= link_to 'Edit', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>

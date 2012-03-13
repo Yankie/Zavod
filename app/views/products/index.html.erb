@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Factory</th>
     <th>Department</th>
     <th>Name</th>
     <th>Weight</th>
@@ -12,7 +13,8 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.department_id %></td>
+    <td><%= product.department.factory.name %></td>
+    <td><%= product.department.department_number %></td>
     <td><%= product.name %></td>
     <td><%= product.weight %></td>
     <td><%= link_to 'Show', product %></td>

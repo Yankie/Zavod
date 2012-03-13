@@ -15,7 +15,7 @@
     <%= f.label :department_number %><br />
     <%= f.number_field :department_number %>
   </div>
-  <%= hidden_field :department, :factory_id, :value => @factory.id %>
+  <%= f.hidden_field :factory_id, :value => @factory.id %>
 <!--  <div class="field">
     <%= f.label :factory_id %><br />
     <%= f.number_field :factory_id %>
