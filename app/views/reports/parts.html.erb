@@ -23,7 +23,7 @@
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
     <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
-    <td><%= part.delivery_date %></td>
+    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
   </tr>
 <% end %>
 </table>
@@ -49,7 +49,7 @@
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
     <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
-    <td><%= part.delivery_date %></td>
+    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
   </tr>
 <% end %>
 </table>

@@ -25,7 +25,7 @@
 	<td><%= part.weight %></td>
 	<td><%= part.dimensions %></td>
 	<td><%= if part.supplier then part.supplier.name else 'None' end %></td>
-    <td><%= part.delivery_date %></td>
+    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
     <td><%= link_to 'Show', supplier_part_path(part.supplier_id, part.id) %></td>
     <td><%= link_to 'Edit', edit_supplier_part_path(part.supplier_id, part.id) %></td>
     <td><%= link_to 'Destroy', supplier_part_path(part.supplier_id, part.id), confirm: 'Are you sure?', method: :delete %></td>

@@ -32,7 +32,8 @@
 
 <p>
   <b>Delivery date:</b>
-  <%= @part.delivery_date %>
+<!--   <%= @part.delivery_date.to_date.to_s(:rfc822) %> -->
+  <%= @part.delivery_date.strftime("%d.%m.%Y") %>
 </p>
 
 
