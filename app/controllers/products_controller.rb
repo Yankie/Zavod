@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 	# GET /products/1.json
 	def show
 		@product = Product.find(params[:id])
-		@parts = @product.parts.paginate(:page => params[:page])
+		@product_parts = @product.parts.paginate(:page => params[:page])
 		@department = @product.department
 		@factory = @department.factory
 
@@ -59,6 +59,20 @@ class ProductsController < ApplicationController
 		end
 	end
 	
+	def free_part
+		@part = Part.find(params[:part])
+		@product = Product.find(params[:id])
+		
+		respond_to do |format|
+			if @part.update_attributes({:product_id => nil})
+				format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+				format.json { head :no_content }
+			else
+				format.html { render action: "edit" }
+				format.json { render json: @product.errors, status: :unprocessable_entity }
+			end
+		end
+	end
 	# GET /products/1/edit
 	def edit
 		@product = Product.find(params[:id])

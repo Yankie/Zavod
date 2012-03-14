@@ -12,7 +12,7 @@
 
 <p>
   <b>Product:</b>
-  <%= @part.product_id %>
+  <%= if @part.product then @part.product.name else 'None' end %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <b>Supplier:</b>
-  <%= @part.supplier_id %>
+  <%= if @part.supplier then @part.supplier.name else 'None' end %>
 </p>
 
 <p>
@@ -37,4 +37,4 @@
 
 
 <%= link_to 'Edit', edit_supplier_part_path(@part.supplier_id, @part.id) %> |
-<%= link_to 'Back', supplier_parts_path(@part.supplier_id) %>
+<%= link_to 'Back', :back %> <!-- supplier_path(@part.supplier_id) -->

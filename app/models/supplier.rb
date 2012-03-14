@@ -16,4 +16,6 @@ class Supplier < ActiveRecord::Base
 	has_many :parts
 
 	validates :name, :presence => true
+	validates :address, :presence => true
+	validates :ceo_name, :presence => true
 end

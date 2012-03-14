@@ -19,10 +19,10 @@
   <tr>
     <td><%= part.part_number %></td>
     <td><%= part.name %></td>
-    <td><%= part.product.name %></td>
+    <td><%= if part.product then part.product.name else 'error' end %></td>
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
-    <td><%= part.supplier_id %></td>
+    <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
     <td><%= part.delivery_date %></td>
   </tr>
 <% end %>
@@ -48,7 +48,7 @@
     <td><%= part.name %></td>
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
-    <td><%= part.supplier_id %></td>
+    <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
     <td><%= part.delivery_date %></td>
   </tr>
 <% end %>

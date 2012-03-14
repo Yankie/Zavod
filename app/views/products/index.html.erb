@@ -16,8 +16,8 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.department.factory.name %></td>
-    <td><%= product.department.department_number %></td>
+    <td><%= if product.department && product.department.factory then product.department.factory.name else '#error' end%></td>
+    <td><%= if product.department then product.department.name else '#error' end %></td>
     <td><%= product.name %></td>
     <td><%= product.weight %></td>
     <td><%= link_to 'Show', product %></td>

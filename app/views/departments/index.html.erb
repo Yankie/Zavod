@@ -4,7 +4,7 @@
 <% else %>
 <table>
   <tr>
-    <th>Department number</th>
+    <th>Name</th>
     <th>Factory</th>
     <th>Chief name</th>
     <th></th>
@@ -14,7 +14,7 @@
 
 <% @departments.each do |department| %>
   <tr>
-    <td><%= department.department_number %></td>
+    <td><%= department.name %></td>
 	<td><%= @factory.name %></td>
     <td><%= department.chief_name %></td>
     <td><%= link_to 'Show', factory_department_path(department.factory_id, department) %></td>

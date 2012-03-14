@@ -7,7 +7,7 @@
 
 <p>
   <b>Department:</b>
-  <%= @department.department_number %>
+  <%= @department.name %>
 </p>
 
 <p>
@@ -37,9 +37,9 @@
 			<th></th>
 			<th></th>
 		</tr>
-		<%= render @parts %>
+		<%= render :partial => 'product_part', :collection => @product_parts, :as => :part %>
 	</table>
-	<%= will_paginate @parts %>
+	<%= will_paginate @product_parts %>
 <% end%>
 <%= link_to 'Add Part', add_part_product_path(@product.id) %>
 </p>

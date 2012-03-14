@@ -16,8 +16,8 @@ class PartsController < ApplicationController
 	# GET /parts/1.json
 	def show
 		@part = Part.find(params[:id])
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+# 		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 		
 		respond_to do |format|
 		format.html # show.html.erb
@@ -29,8 +29,8 @@ class PartsController < ApplicationController
 	# GET /parts/new.json
 	def new
 		@part = Part.new
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+# 		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 		
 		respond_to do |format|
 		format.html # new.html.erb
@@ -41,16 +41,16 @@ class PartsController < ApplicationController
 	# GET /parts/1/edit
 	def edit
 		@part = Part.find(params[:id])
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 	end
 
 	# POST /parts
 	# POST /parts.json
 	def create
 		@part = Part.new(params[:part])
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+# 		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 		
 		respond_to do |format|
 		if @part.save
@@ -67,8 +67,8 @@ class PartsController < ApplicationController
 	# PUT /parts/1.json
 	def update
 		@part = Part.find(params[:id])
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+# 		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 		
 		respond_to do |format|
 		if @part.update_attributes(params[:part])
@@ -85,13 +85,13 @@ class PartsController < ApplicationController
 	# DELETE /parts/1.json
 	def destroy
 		@part = Part.find(params[:id])
-# 		@product = Product.find(params[:product_id])
-		@supplier = Supplier.find(params[:supplier_id])
+# 		@product = Product.find(@part.product_id)
+		@supplier = Supplier.find(@part.supplier_id)
 		@part.destroy
 
 		respond_to do |format|
-		format.html { redirect_to parts_url }
-		format.json { head :no_content }
+			format.html { redirect_to @supplier }
+			format.json { head :no_content }
 		end
 	end
 end

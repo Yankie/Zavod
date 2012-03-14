@@ -18,10 +18,10 @@ Zavod::Application.routes.draw do
 	end
 
 	resources :products do
-		resources :parts
+		resources :parts, :except => [ :edit, :new, :create, :destroy, :update ]
 		member do
-			get :add_part, :remove_part
-			put :assign_part
+			get :add_part
+			put :assign_part, :free_part
 		end
 	end
 

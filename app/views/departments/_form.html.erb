@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :department_number %><br />
-    <%= f.number_field :department_number %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <%= f.hidden_field :factory_id, :value => @factory.id %>
 <!--  <div class="field">
