@@ -78,11 +78,12 @@ class DepartmentsController < ApplicationController
 	# DELETE /departments/1
 	# DELETE /departments/1.json
 	def destroy
+		@factory = Factory.find(params[:factory_id])
 		@department = Department.find(params[:id])
 		@department.destroy
 
 		respond_to do |format|
-		format.html { redirect_to departments_url }
+			format.html { redirect_to @factory }
 		format.json { head :no_content }
 		end
 	end

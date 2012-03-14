@@ -1,5 +1,7 @@
-<h1>Listing departments</h1>
-
+<h1>Listing departments for factory <%= @factory.name %></h1>
+<% if @departments.empty? %>
+<p>None</p>
+<% else %>
 <table>
   <tr>
     <th>Department number</th>
@@ -21,7 +23,7 @@
   </tr>
 <% end %>
 </table>
-
+<% end %>
 <br />
 
 <%= link_to 'New Department', new_factory_department_path(@factory.id) %>

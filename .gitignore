@@ -17,3 +17,5 @@
 # Ignore Kate backups
 *~
 .*~
+.*.kate-swp
+*.kate-swp

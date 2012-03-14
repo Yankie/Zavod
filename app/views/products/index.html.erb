@@ -1,5 +1,8 @@
 <h1>Listing products</h1>
 
+<% if @products.empty? %>
+<p>None</p>
+<% else %>
 <table>
   <tr>
     <th>Factory</th>
@@ -23,6 +26,7 @@
   </tr>
 <% end %>
 </table>
+<% end %>
 
 <br />
 

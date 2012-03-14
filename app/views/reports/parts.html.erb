@@ -1,6 +1,9 @@
 <h1>Report: All parts</h1>
 
 <h2>Parts used in products</h2>
+<% if @parts.empty? %>
+<p>None</p>
+<% else %>
 <table>
   <tr>
     <th>Part number</th>
@@ -24,8 +27,11 @@
   </tr>
 <% end %>
 </table>
-
+<% end %>
 <h2>Parts not assigned to any products</h2>
+<% if @parts_free.empty? %>
+<p>None</p>
+<% else %>
 <table>
   <tr>
     <th>Part number</th>
@@ -47,3 +53,4 @@
   </tr>
 <% end %>
 </table>
+<% end %>
