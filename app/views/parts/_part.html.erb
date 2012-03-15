@@ -1,12 +1,12 @@
 <tr>
 	<td><%= part.part_number %></td>
 	<td><%= part.name %></td>
-	<td><%= if part.product then part.product.name else 'None' end %></td>
+	<td><%= if part.product then part.product.name else t('none') end %></td>
 	<td><%= part.weight %></td>
 	<td><%= part.dimensions %></td>
-	<td><%= if part.supplier then part.supplier.name else 'None' end %></td>
-	<td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
-	<td><%= link_to 'Show', supplier_part_path(part.supplier_id, part) %></td>
-	<td><%= link_to 'Edit', edit_supplier_part_path(part.supplier_id, part) %></td>
-	<td><%= link_to 'Destroy', supplier_part_path(part.supplier_id, part), confirm: 'Are you sure?', method: :delete %></td>
+<!-- 	<td><%= if part.supplier then part.supplier.name else t('none') end %></td> -->
+	<td><%= l part.delivery_date %></td>
+	<td><%= link_to t('links.show'), supplier_part_path(part.supplier_id, part) %></td>
+	<td><%= link_to t('links.edit'), edit_supplier_part_path(part.supplier_id, part) %></td>
+	<td><%= link_to t('links.delete'), supplier_part_path(part.supplier_id, part), confirm: t( 'actions.confirm'), method: :delete %></td>
 </tr>

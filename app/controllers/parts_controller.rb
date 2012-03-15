@@ -30,7 +30,7 @@ class PartsController < ApplicationController
 	def new
 		@part = Part.new
 # 		@product = Product.find(@part.product_id)
-		@supplier = Supplier.find(@part.supplier_id)
+		@supplier = Supplier.find(params[:supplier_id])
 		
 		respond_to do |format|
 		format.html # new.html.erb
@@ -50,7 +50,7 @@ class PartsController < ApplicationController
 	def create
 		@part = Part.new(params[:part])
 # 		@product = Product.find(@part.product_id)
-		@supplier = Supplier.find(@part.supplier_id)
+		@supplier = Supplier.find(params[:supplier_id])
 		
 		respond_to do |format|
 		if @part.save

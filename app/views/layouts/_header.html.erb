@@ -9,17 +9,17 @@
 	<nav class="round">
 		<ul>
 			<li>
-				<%= link_to "Edit", '#' %>
+				<%= link_to t('links.nav.edit'), '#' %>
 				<ul>
-					<li><%= link_to "Factories", factories_path %></li>
-					<li><%= link_to "Products", products_path %></li>
-					<li><%= link_to "Suppliers", suppliers_path %></li>
+					<li><%= link_to t('links.nav.factories'), factories_path %></li>
+					<li><%= link_to t('links.nav.products'), products_path %></li>
+					<li><%= link_to t('links.nav.suppliers'), suppliers_path %></li>
 				</ul>
 			</li>
 			<li>
-				<%= link_to "Reports", '#' %>
+				<%= link_to t('links.nav.reports'), '#' %>
 				<ul>
-					<li><%= link_to "Parts", reports_parts_path %></li>
+					<li><%= link_to t('links.nav.parts'), reports_parts_path %></li>
 <!-- 					<li><%= link_to "Deliveries", reports_deliveries_path %></li> -->
 				</ul>
 			</li>

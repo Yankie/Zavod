@@ -1,6 +1,6 @@
-<h1>Editing factory</h1>
+<h1><%= t('actions.factory.edit', :item => @factory.name) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @factory %> |
-<%= link_to 'Back', factory_path %>
+<%= link_to t('links.show'), @factory %> |
+<%= link_to t('links.back'), factory_path %>

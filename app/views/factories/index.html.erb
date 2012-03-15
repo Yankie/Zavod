@@ -1,15 +1,15 @@
-<h1>Listing factories</h1>
+<h1><%= t('actions.factory.index') %></h1>
 
 <% if @factories.empty? %>
-<p>None</p>
+<p><%= t('empty')%></p>
 <% else %>
 
 <table>
   <tr>
-    <th>Factory #</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>CEO Name</th>
+    <th><%= t('activerecord.attributes.factory.factory_num') %></th>
+    <th><%= t('activerecord.attributes.factory.name') %></th>
+    <th><%= t('activerecord.attributes.factory.address') %></th>
+    <th><%= t('activerecord.attributes.factory.ceo_name') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,9 +21,9 @@
     <td><%= factory.name %></td>
     <td><%= factory.address %></td>
     <td><%= factory.ceo_name %></td>
-    <td><%= link_to 'Show', factory %></td>
-    <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
-    <td><%= link_to 'Destroy', factory, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('links.show'), factory %></td>
+    <td><%= link_to t('links.edit'), edit_factory_path(factory) %></td>
+    <td><%= link_to t('links.delete'), factory, confirm: t('actions.confirm'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -31,4 +31,4 @@
 
 <br />
 
-<%= link_to 'New Factory', new_factory_path %>
+<%= link_to t('actions.factory.new'), new_factory_path %>

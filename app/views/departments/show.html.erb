@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('activerecord.attributes.department.name') %>:</b>
   <%= @department.name %>
 </p>
 
 <p>
-  <b>Factory:</b>
+  <b><%= t('activerecord.attributes.department.factory_id') %>:</b>
   <%= @factory.name %>
 </p>
 
 <p>
-  <b>Chief name:</b>
+  <b><%= t('activerecord.attributes.department.chief_name') %>:</b>
   <%= @department.chief_name %>
 </p>
 
 
-<%= link_to 'Edit', edit_factory_department_path(@department.factory_id, @department) %> |
-<%= link_to 'Back', factory_path(@department.factory_id)  %>
+<%= link_to t('links.edit'), edit_factory_department_path(@department.factory_id, @department) %> |
+<%= link_to t('links.back'), factory_path(@department.factory_id)  %>

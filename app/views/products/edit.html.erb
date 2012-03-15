@@ -1,6 +1,6 @@
-<h1>Editing product</h1>
+<h1><%= t('actions.product.edit', :item => @product.name) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('links.show'), @product %> |
+<%= link_to t('links.back'), products_path %>

@@ -1,41 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Part number:</b>
+  <b><%= t('activerecord.attributes.part.part_number') %>:</b>
   <%= @part.part_number %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('activerecord.attributes.part.name') %>:</b>
   <%= @part.name %>
 </p>
 
 <p>
-  <b>Product:</b>
+  <b><%= t('activerecord.attributes.part.product_id') %>:</b>
   <%= if @part.product then @part.product.name else 'None' end %>
 </p>
 
 <p>
-  <b>Weight:</b>
+  <b><%= t('activerecord.attributes.part.weight') %>:</b>
   <%= @part.weight %>
 </p>
 
 <p>
-  <b>Dimensions:</b>
+  <b><%= t('activerecord.attributes.part.dimensions') %>:</b>
   <%= @part.dimensions %>
 </p>
 
 <p>
-  <b>Supplier:</b>
+  <b><%= t('activerecord.attributes.part.supplier_id') %>:</b>
   <%= if @part.supplier then @part.supplier.name else 'None' end %>
 </p>
 
 <p>
-  <b>Delivery date:</b>
+  <b><%= t('activerecord.attributes.part.delivery_date') %>:</b>
 <!--   <%= @part.delivery_date.to_date.to_s(:rfc822) %> -->
-  <%= @part.delivery_date.strftime("%d.%m.%Y") %>
+<!--   <%= @part.delivery_date.strftime("%d.%m.%Y") %> -->
+	<%= l @part.delivery_date %>
 </p>
 
 
-<%= link_to 'Edit', edit_supplier_part_path(@part.supplier_id, @part.id) %> |
-<%= link_to 'Back', :back %> <!-- supplier_path(@part.supplier_id) -->
+<%= link_to t('actions.edit'), edit_supplier_part_path(@part.supplier_id, @part.id) %> |
+<%= link_to t('actions.back'), :back %> <!-- supplier_path(@part.supplier_id) -->

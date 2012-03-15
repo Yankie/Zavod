@@ -3,3 +3,19 @@
 
 en:
   hello: "Hello world"
+  actions:
+    confirm: Are you sure?
+    report:
+      parts:
+        assiged_parts: Parts used in products
+        free_parts: Parts not assigned to any products
+    pages:
+      welcome:
+        title: "Welcome!"
+        page: "<p>Это тестовое задание для получения права занять вакансию</p>"
+      about:
+        title: "About me"
+        page: "<p>I'm just a beginner on long journey of mastering Ruby-on-Rails</p>"
+      contacts:
+        title: "Contacts"
+        page: '<p>Please, feel free to contact me via <a href="mailto:yankie@inbox.ru">e-mail</a> or phone +7 (985) 254-10-20</p>'

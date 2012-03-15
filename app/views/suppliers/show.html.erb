@@ -1,42 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Supplier number:</b>
+  <b><%= t('activerecord.attributes.supplier.supplier_number') %>:</b>
   <%= @supplier.supplier_number %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('activerecord.attributes.supplier.name') %>:</b>
   <%= @supplier.name %>
 </p>
 
 <p>
-  <b>Region:</b>
+  <b><%= t('activerecord.attributes.supplier.region') %>:</b>
   <%= @supplier.region %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b><%= t('activerecord.attributes.supplier.address') %>:</b>
   <%= @supplier.address %>
 </p>
 
 <p>
-  <b>Ceo name:</b>
+  <b><%= t('activerecord.attributes.supplier.ceo_name') %>:</b>
   <%= @supplier.ceo_name %>
 </p>
 
-<b>Parts:</b>
+<b><%= t('activerecord.attributes.product.parts') %>:</b>
 <%= @supplier.parts.count %>
 <% unless @supplier.parts.empty? %>
 	<table summary="Supplier parts">
 		<tr>
-			<th>Part number</th>
-			<th>Name</th>
-			<th>Product</th>
-			<th>Weight</th>
-			<th>Dimensions</th>
-			<th>Supplier</th>
-			<th>Delivery date</th>
+			<th><%= t('activerecord.attributes.part.part_number') %></th>
+			<th><%= t('activerecord.attributes.part.name') %></th>
+			<th><%= t('activerecord.attributes.part.product_id') %></th>
+			<th><%= t('activerecord.attributes.part.weight') %></th>
+			<th><%= t('activerecord.attributes.part.dimensions') %></th>
+<!-- 		    <th><%= t('activerecord.attributes.part.supplier_id') %></th> -->
+			<th><%= t('activerecord.attributes.part.delivery_date') %></th>
 			<th></th>
 			<th></th>
 			<th></th>
@@ -45,9 +45,9 @@
 	</table>
 	<%= will_paginate @parts %>
 <% end%>
-<%= link_to 'Add Part', new_supplier_part_path(@supplier.id) %>
+<%= link_to t('actions.part.new', :item => ''), new_supplier_part_path(@supplier.id) %>
 </p>
 
 
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+<%= link_to t('links.edit'), edit_supplier_path(@supplier) %> |
+<%= link_to t('links.back'), suppliers_path %>

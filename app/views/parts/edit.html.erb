@@ -1,6 +1,6 @@
-<h1>Editing part</h1>
+<h1><%= t('actions.part.edit', :item => @part.name ) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', supplier_part_path(@part.supplier_id, @part.id) %> |
-<%= link_to 'Back', supplier_path(@part.supplier_id) %>
+<%= link_to t('links.show'), supplier_part_path(@part.supplier_id, @part.id) %> |
+<%= link_to t('links.back'), supplier_path(@part.supplier_id) %>

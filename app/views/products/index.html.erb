@@ -1,14 +1,14 @@
-<h1>Listing products</h1>
+<h1><%= t('actions.product.index') %></h1>
 
 <% if @products.empty? %>
 <p>None</p>
 <% else %>
 <table>
   <tr>
-    <th>Factory</th>
-    <th>Department</th>
-    <th>Name</th>
-    <th>Weight</th>
+    <th><%= t('activerecord.attributes.department.factory_id') %></th>
+    <th><%= t('activerecord.attributes.product.department_id') %></th>
+    <th><%= t('activerecord.attributes.product.name') %></th>
+    <th><%= t('activerecord.attributes.product.weight') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,9 +20,9 @@
     <td><%= if product.department then product.department.name else '#error' end %></td>
     <td><%= product.name %></td>
     <td><%= product.weight %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('links.show'), product %></td>
+    <td><%= link_to t('links.edit'), edit_product_path(product) %></td>
+    <td><%= link_to t('links.delete'), product, confirm: t('actions.confirm'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -30,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to t('actions.product.new'), new_product_path %>

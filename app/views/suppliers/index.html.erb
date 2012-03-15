@@ -1,4 +1,4 @@
-<h1>Listing suppliers</h1>
+<h1><%= t('actions.supplier.index') %></h1>
 
 
 <% if @suppliers.empty? %>
@@ -6,11 +6,11 @@
 <% else %>
 <table>
   <tr>
-    <th>Supplier number</th>
-    <th>Name</th>
-    <th>Region</th>
-    <th>Address</th>
-    <th>Ceo name</th>
+    <th><%= t('activerecord.attributes.supplier.supplier_number') %></th>
+    <th><%= t('activerecord.attributes.supplier.name') %></th>
+    <th><%= t('activerecord.attributes.supplier.region') %></th>
+    <th><%= t('activerecord.attributes.supplier.address') %></th>
+    <th><%= t('activerecord.attributes.supplier.ceo_name') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,9 +23,9 @@
     <td><%= supplier.region %></td>
     <td><%= supplier.address %></td>
     <td><%= supplier.ceo_name %></td>
-    <td><%= link_to 'Show', supplier %></td>
-    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-    <td><%= link_to 'Destroy', supplier, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('links.show'), supplier %></td>
+    <td><%= link_to t('links.edit'), edit_supplier_path(supplier) %></td>
+    <td><%= link_to t('links.delete'), supplier, confirm: t('actions.confirm'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -33,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Supplier', new_supplier_path %>
+<%= link_to t('actions.supplier.new'), new_supplier_path %>

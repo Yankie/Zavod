@@ -1,17 +1,17 @@
-<h1>Listing parts for supplier <%= @supplier.name %></h1>
+<h1><%= t('actions.part.index', :item => @supplier.name ) %></h1>
 
 <% if @parts.empty? %>
 <p>None</p>
 <% else %>
 <table>
   <tr>
-    <th>Part number</th>
-    <th>Name</th>
-    <th>Product</th>
-    <th>Weight</th>
-    <th>Dimensions</th>
-    <th>Supplier</th>
-    <th>Delivery date</th>
+    <th><%= t('activerecord.attributes.part.part_number') %></th>
+    <th><%= t('activerecord.attributes.part.name') %></th>
+    <th><%= t('activerecord.attributes.part.product_id') %></th>
+    <th><%= t('activerecord.attributes.part.weight') %></th>
+    <th><%= t('activerecord.attributes.part.dimensions') %></th>
+<!--     <th><%= t('activerecord.attributes.part.supplier_id') %></th> -->
+    <th><%= t('activerecord.attributes.part.delivery_date') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,16 +24,15 @@
 	<td><%= if part.product then part.product.name else 'None' end %></td>
 	<td><%= part.weight %></td>
 	<td><%= part.dimensions %></td>
-	<td><%= if part.supplier then part.supplier.name else 'None' end %></td>
-    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
-    <td><%= link_to 'Show', supplier_part_path(part.supplier_id, part.id) %></td>
-    <td><%= link_to 'Edit', edit_supplier_part_path(part.supplier_id, part.id) %></td>
-    <td><%= link_to 'Destroy', supplier_part_path(part.supplier_id, part.id), confirm: 'Are you sure?', method: :delete %></td>
+<!-- 	<td><%= if part.supplier then part.supplier.name else 'None' end %></td> -->
+    <td><%= l part.delivery_date %></td>
+	<td><%= link_to t('links.show'), supplier_part_path(part.supplier_id, part) %></td>
+	<td><%= link_to t('links.edit'), edit_supplier_part_path(part.supplier_id, part) %></td>
+	<td><%= link_to t('links.delete'), supplier_part_path(part.supplier_id, part), confirm: t('actions.confirm'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
 
 <br />
-
-<%= link_to 'New Part', new_supplier_part_path(@supplier.id) %>
+<%= link_to t('actions.part.new', :item => ''), new_supplier_part_path(@supplier.id) %>

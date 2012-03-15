@@ -1,18 +1,18 @@
-<h1>Report: All parts</h1>
+<h1><%= t('actions.report.parts.title')%></h1>
 
-<h2>Parts used in products</h2>
+<h2><%= t('actions.report.parts.assiged_parts')%></h2>
 <% if @parts.empty? %>
 <p>None</p>
 <% else %>
 <table>
   <tr>
-    <th>Part number</th>
-    <th>Name</th>
-    <th>Product</th>
-    <th>Weight</th>
-    <th>Dimensions</th>
-    <th>Supplier</th>
-    <th>Delivery date</th>
+    <th><%= t('activerecord.attributes.part.part_number') %></th>
+    <th><%= t('activerecord.attributes.part.name') %></th>
+    <th><%= t('activerecord.attributes.part.product_id') %></th>
+    <th><%= t('activerecord.attributes.part.weight') %></th>
+    <th><%= t('activerecord.attributes.part.dimensions') %></th>
+    <th><%= t('activerecord.attributes.part.supplier_id') %></th>
+    <th><%= t('activerecord.attributes.part.delivery_date') %></th>
   </tr>
 
 <% @parts.each do |part| %>
@@ -23,23 +23,23 @@
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
     <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
-    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
+    <td><%= I18n.l part.delivery_date %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
-<h2>Parts not assigned to any products</h2>
+<h2><%= t('actions.report.parts.free_parts')%></h2>
 <% if @parts_free.empty? %>
 <p>None</p>
 <% else %>
 <table>
   <tr>
-    <th>Part number</th>
-    <th>Name</th>
-    <th>Weight</th>
-    <th>Dimensions</th>
-    <th>Supplier</th>
-    <th>Delivery date</th>
+    <th><%= t('activerecord.attributes.part.part_number') %></th>
+    <th><%= t('activerecord.attributes.part.name') %></th>
+    <th><%= t('activerecord.attributes.part.weight') %></th>
+    <th><%= t('activerecord.attributes.part.dimensions') %></th>
+    <th><%= t('activerecord.attributes.part.supplier_id') %></th>
+    <th><%= t('activerecord.attributes.part.delivery_date') %></th>
   </tr>
 
 <% @parts_free.each do |part| %>
@@ -49,7 +49,7 @@
     <td><%= part.weight %></td>
     <td><%= part.dimensions %></td>
     <td><%= if part.supplier then part.supplier.name else 'error' end %></td>
-    <td><%= part.delivery_date.strftime("%d.%m.%Y") %></td>
+    <td><%= I18n.l part.delivery_date %></td>
   </tr>
 <% end %>
 </table>

@@ -1,43 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<b>Factory #:</b>
-<%= @factory.factory_num %>
+	<b><%= t('activerecord.attributes.factory.factory_num') %>:</b>
+	<%= @factory.factory_num %>
 </p>
 
 <p>
-<b>Name:</b>
-<%= @factory.name %>
+	<b><%= t('activerecord.attributes.factory.name') %>:</b>
+	<%= @factory.name %>
 </p>
 
 <p>
-<b>Address:</b>
-<%= @factory.address %>
+	<b><%= t('activerecord.attributes.factory.address') %>:</b>
+	<%= @factory.address %>
 </p>
 
 <p>
-<b>CEO Name:</b>
-<%= @factory.ceo_name %>
+	<b><%= t('activerecord.attributes.factory.ceo_name') %>:</b>
+	<%= @factory.ceo_name %>
 </p>
 
 <p>
-<b>Departments:</b>
-<%= @factory.departments.count %>
-<% unless @factory.departments.empty? %>
-	<table summary="Factory departments">
-		<tr>
-			<th>Name</th>
-			<th>Chief name</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<%= render @departments %>
-	</table>
-	<%= will_paginate @departments %>
-<% end%>
-<%= link_to 'New Department', new_factory_department_path(@factory.id) %>
+	<b><%= t('activerecord.attributes.factory.departments') %>:</b>
+	<%= @factory.departments.count %>
+	<% unless @factory.departments.empty? %>
+		<table summary="Factory departments">
+			<tr>
+				<th><%= t('activerecord.attributes.department.name') %></th>
+				<th><%= t('activerecord.attributes.department.chief_name') %></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<%= render @departments %>
+		</table>
+		<%= will_paginate @departments %>
+	<% end%>
+	<%= link_to t('actions.department.new', :item => ''), new_factory_department_path(@factory.id) %>
 </p>
 
-<%= link_to 'Edit', edit_factory_path(@factory) %> |
-<%= link_to 'Back', factories_path %>
+<%= link_to t('links.edit'), edit_factory_path(@factory) %> |
+<%= link_to t('links.back'), factories_path %>

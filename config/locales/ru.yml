@@ -1,0 +1,117 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  links:
+    show: "Просмотр"
+    edit: "Изменение"
+    delete: "Удаление"
+    remove: "Убрать"
+    back: "Назад"
+    nav:
+      edit: "Изменения"
+      about: "Обо мне"
+      contact: "Контакты"
+      factories: "Заводы"
+      departments: "Отделы"
+      products: "Изделия"
+      parts: "Детали"
+      suppliers: "Поставщики"
+      reports: "Отчёты"
+
+  actions:
+    department:
+      edit: "Изменить отдел: %{item}"
+      index: "Листинг: Отделы завода %{item}"
+      new: "Новый отдел завода %{item}"
+      show: "Просмотр: Отдел %{item}"
+      delete: "Удалить отдел %{item}"
+
+    factory:
+      edit: "Изменить завод: %{item}"
+      index: "Листинг: Заводы"
+      new: "Новый завод"
+      show: "Просмотр: Завод %{item}"
+      delete: "Удалить завод %{item}"
+      factory_department: "Новый  отдел завода %{item}"
+
+    part:
+      edit: "Изменить деталь: %{item}"
+      index: "Листинг: Детали поставщика %{item}"
+      new: "Новая деталь поставщика %{item}"
+      show: "Просмотр: Деталь %{item}"
+      delete: "Удалить деталь %{item}"
+
+    product:
+      edit: "Изменить изделие: %{item}"
+      index: "Листинг: Изделия"
+      new: "Новое изделие"
+      show: "Просмотр: Изделие %{item}"
+      delete: "Удалить изделие %{item}"
+      add_part: "Добавить деталь в изделие %{item}"
+
+    supplier:
+      edit: "Изменить поставщика: %{item}"
+      index: "Листинг: Поставщики"
+      new: "Новый поставщик"
+      show: "Просмотр: Поставщик %{item}"
+      delete: "Удалить поставщика %{item}"
+      new_part: "Новая деталь от поставщика %{item}"
+    report:
+        parts:
+          title: "Отчёт: Детали"
+          assiged_parts: "Детали, используемые в изделиях"
+          free_parts: "Неиспользуемые детали"
+    pages:
+      welcome:
+        title: "Добро пожаловать!"
+        page: "<p>Это тестовое задание для получения права занять вакансию</p>"
+      about:
+        title: "Обо мне"
+        page: "<p>Я всего лишь новичёк в долгом путешествии освоения Ruby-on-Rails</p>"
+      contacts:
+        title: "Контакты"
+        page: '<p>Пожалуйста, не стесняйтесь мне писать на почту <a href="mailto:yankie@inbox.ru\">e-mail</a> или звонить по телефону +7 (985) 254-10-20</p>'
+    
+    confirm: "Уверены?"
+
+  activerecord:
+    models:
+      factory: "Завод"
+      department: "Отдел"
+      product: "Изделие"
+      part: "Деталь"
+      supplier: "Поставщик"
+      
+    attributes:
+      factory:
+        factory_num: "Номер завода"
+        name: "Наименование"
+        address: "Адрес"
+        ceo_name: "Ф.И.О. директора"
+        departments: "Отделов"
+      department:
+        name: "Название отдела"
+        factory_id: "Завод"
+        chief_name: "Ф.И.О. начальника"
+      product:
+        name: "Наименование"
+        weight: "Вес"
+        department_id: "Отдел"
+        parts: "Детали"
+      supplier:
+        name: "Наименование"
+        address: "Адрес"
+        ceo_name: "Ф.И.О. директора"
+        supplier_number: "Код"
+        region: "Регион"
+      part:
+        name: "Наименование"
+        supplier_id: "Поставщик"
+        part_number: "Код"
+        product_id: "Изделие"
+        weight: "Вес"
+        dimensions: "Размеры"
+        delivery_date: "Срок поставки"
+
+

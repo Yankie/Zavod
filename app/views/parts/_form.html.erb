@@ -1,16 +1,5 @@
 <%= form_for([@supplier, @part]) do |f| %>
-  <% if @part.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
-
-      <ul>
-      <% @part.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= f.error_messages :class =>  "error_explanation",  :id => "error_explanation" %>
   <div class="field">
     <%= f.label :part_number %><br />
     <%= f.number_field :part_number %>
