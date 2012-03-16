@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
 		
 		respond_to do |format|
 			if @part.update_attributes({:product_id => @product.id})
-				format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+				format.html { redirect_to @product, notice: t('actions.product.notice.created') }
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }
@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
 		
 		respond_to do |format|
 			if @part.update_attributes({:product_id => nil})
-				format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+				format.html { redirect_to @product, notice: t('actions.product.notice.updated') }
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }
@@ -86,7 +86,7 @@ class ProductsController < ApplicationController
 
 		respond_to do |format|
 			if @product.save
-				format.html { redirect_to @product, notice: 'Product was successfully created.' }
+				format.html { redirect_to @product, notice: t('actions.product.notice.created') }
 				format.json { render json: @product, status: :created, location: @product }
 			else
 				format.html { render action: "new" }
@@ -102,7 +102,7 @@ class ProductsController < ApplicationController
 
 		respond_to do |format|
 			if @product.update_attributes(params[:product])
-				format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+				format.html { redirect_to @product, notice: t('actions.product.notice.updated') }
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }

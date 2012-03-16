@@ -19,3 +19,24 @@ en:
       contacts:
         title: "Contacts"
         page: '<p>Please, feel free to contact me via <a href="mailto:yankie@inbox.ru">e-mail</a> or phone +7 (985) 254-10-20</p>'
+    department:
+      notice:
+        created: 'Department was successfully created.'
+        updated: 'Department was successfully updated.'
+    factory:
+      notice:
+        created: 'Factory was successfully created.'
+        updated: 'Factory was successfully updated.'
+    part:
+      notice:
+        created: 'Part was successfully created.'
+        updated: 'Part was successfully updated.'
+    product:
+      notice:
+        created: 'Product was successfully created.'
+        updated: 'Product was successfully updated.'
+    supplier:
+      notice:
+        created: 'Supplier was successfully created.'
+        updated: 'Supplier was successfully updated.'
+        

@@ -49,7 +49,7 @@ class DepartmentsController < ApplicationController
 
 		respond_to do |format|
 		if @department.save
-			format.html { redirect_to @factory, notice: 'Department was successfully created.' }
+			format.html { redirect_to @factory, notice: t('actions.department.notice.created') }
 			format.json { render json: @department, status: :created, location: @department }
 		else
 			format.html { render action: "new" }
@@ -66,7 +66,7 @@ class DepartmentsController < ApplicationController
 
 		respond_to do |format|
 		if @department.update_attributes(params[:department])
-			format.html { redirect_to @factory, notice: 'Department was successfully updated.' }
+			format.html { redirect_to @factory, notice: t('actions.department.notice.updated') }
 			format.json { head :no_content }
 		else
 			format.html { render action: "edit" }

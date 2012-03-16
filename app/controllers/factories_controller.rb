@@ -45,7 +45,7 @@ class FactoriesController < ApplicationController
 
     respond_to do |format|
       if @factory.save
-        format.html { redirect_to @factory, notice: 'Factory was successfully created.' }
+		  format.html { redirect_to @factory, notice: t('actions.factory.notice.created') }
         format.json { render json: @factory, status: :created, location: @factory }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class FactoriesController < ApplicationController
 
     respond_to do |format|
       if @factory.update_attributes(params[:factory])
-        format.html { redirect_to @factory, notice: 'Factory was successfully updated.' }
+		  format.html { redirect_to @factory, notice: t('actions.factory.notice.updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
